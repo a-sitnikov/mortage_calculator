@@ -1,38 +1,9 @@
 import React, { Component } from 'react';
 import { FormGroup, Col, ControlLabel, Button, Table } from 'react-bootstrap'
 import Form from "react-jsonschema-form";
-import ObjectField from "react-jsonschema-form/lib/components/fields/ObjectField";
 
 import { calcTerm, calcMonthlyPayment, calcPayments } from './utils'
 import './App.css';
-
-function CustomFieldTemplate(props) {
-  const { id, classNames, label, help, required, description, errors, children } = props;
-  return (
-    <FormGroup controlId={id} bsClass={classNames} key={id}>
-      <Col componentClass={ControlLabel} sm={2}>
-        {label}{required ? "*" : null}
-      </Col>
-      <Col sm={10}>
-        {description}
-        {children}
-        {errors}
-        {help}
-      </Col>
-    </FormGroup>
-  );
-}
-
-function ObjectFieldTemplate1(props) {
-  console.log(props)
-  return (
-    <div>
-      {props.title}
-      {props.description}
-      {props.properties}
-    </div>
-  );
-}
 
 class App extends Component {
 
